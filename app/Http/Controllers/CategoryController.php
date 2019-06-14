@@ -17,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return CategoryResource::collection(category::latest()->get());
     }
 
  
@@ -46,7 +46,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return $category;
+        return new CategoryResource($category);
     }
 
    
